@@ -1,0 +1,9 @@
+{
+  "name": "cypress",
+  "version": "0.0.1-SNAPSHOT",
+  "license": "GPL-3.0+",
+  "dependencies": {
+    "cypress": "^2.1.0",
+    "cypress-cucumber-preprocessor": "^0.6.0"
+  }
+}

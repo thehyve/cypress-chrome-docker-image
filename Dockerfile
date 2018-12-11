@@ -1,3 +1,8 @@
 FROM cypress/browsers:chrome69
-RUN npm i cypress@2.1.0
-RUN npm i cypress-cucumber-preprocessor@0.6.0
+# 1003 is uid of bamboo user on the CI
+RUN useradd -ms /bin/bash -u 1003 bamboo
+USER bamboo
+WORKDIR /home/bamboo
+COPY package.json /home/bamboo/
+RUN npm install
+ENV PATH="/home/bamboo/node_modules/.bin/:${PATH}"
